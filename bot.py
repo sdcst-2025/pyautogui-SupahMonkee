@@ -1,7 +1,5 @@
 import pyautogui as gui
-from pyautogui import *
 import pydirectinput as di
-from pyautogui import *
 import time as t
 
 
@@ -13,7 +11,7 @@ def start():
 
     #start game
     gui.leftClick(225, 175)
-    sleep(0.01)
+    t.sleep(0.01)
 
     #checking for new game
     gui.leftClick(530,580)
@@ -95,8 +93,11 @@ def bot():
 while True:
     t.sleep(1)
     try:
-        location = gui.locate('images/win.png',confidence=0.5)
-        print(location)
+        #gui.locateOnScreen('win.png',confidence=0.6)
+        gui.screenshot()
+        print(gui.pixel(100,100))
+        #print(loc)
+        print('found')
     except:
         print('not found')
 
